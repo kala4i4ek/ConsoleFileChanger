@@ -107,6 +107,7 @@ int main() {
 		SetConsoleCP(1251);
 		cin >> file;
 		system("cls");
+		SetConsoleCP(866);
 		reader(file);
 		break;
 	}

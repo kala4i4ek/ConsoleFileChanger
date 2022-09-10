@@ -10,7 +10,6 @@ void creator() {
 	setlocale(LC_ALL, "Russian");
 	string put, format, name, all;
 	cout << "Введите путь к месту создания файла: ";
-	SetConsoleCP(1251);
 	cin >> put;
 	cout << "Введите название файла: ";
 	cin >> name;
@@ -24,7 +23,6 @@ void creator() {
 	else {
 		cout << "Файл не создан!" << endl;
 	}
-	SetConsoleCP(866);
 	test.close();
 }
 
@@ -44,11 +42,9 @@ void reader(char filename[255]) {
 	string line;
 	ifstream in(filename);
 	if (in.is_open()) {
-		SetConsoleCP(1251);
 		while (getline(in, line)) {
 			cout << line << endl;
 		}
-		SetConsoleCP(866);
 		cout << "Программа успешно завершена!" << endl;
 	}
 	else {
@@ -66,14 +62,12 @@ void writer(char filename[255]) {
 	cout << "Введите количество строк для ввода: ";
 	cin >> strok;
 	if (out.is_open()) {
-		SetConsoleCP(1251);
 		for (int i = 0; i < strok; i++) {
 			system("cls");
 			cout << "Введите строку: ";
 			cin >> enter;
 			out << enter << endl;
 		}
-		SetConsoleCP(866);
 		cout << "Программа успешно завершена!" << endl;
 	}
 	else {
@@ -97,6 +91,7 @@ void deleter(string filename) {
 
 int main() {
 	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
 	int choice;
 	char file[255];
 	cout << "Выберите:\n1. Прочитать файл,\n2. Запись в  файл\n3. Создание файла,\n4. Очистка файла,\n5. Удаление файла;\nВыбор: ";
@@ -104,19 +99,15 @@ int main() {
 	switch (choice) {
 	case (1): {
 		cout << "Введите путь к файлу: ";
-		SetConsoleCP(1251);
 		cin >> file;
 		system("cls");
-		SetConsoleCP(866);
 		reader(file);
 		break;
 	}
 	case (2): {
 		cout << "Введите путь к файлу: ";
-		SetConsoleCP(1251);
 		cin >> file;
 		system("cls");
-		SetConsoleCP(866);
 		writer(file);
 		break;
 	}
@@ -127,19 +118,15 @@ int main() {
 	}
 	case (4): {
 		cout << "Введите путь к файлу: ";
-		SetConsoleCP(1251);
 		cin >> file;
 		system("cls");
-		SetConsoleCP(866);
 		eraser(file);
 		break;
 	}
 	case (5): {
 		cout << "Введите путь к файлу: ";
-		SetConsoleCP(1251);
 		cin >> file;
 		system("cls");
-		SetConsoleCP(866);
 		deleter(file);
 		break;
 	}
@@ -149,6 +136,7 @@ int main() {
 		break;
 	}
 	}
+	SetConsoleCP(866);
 	system("pause");
 	return 0;
 }

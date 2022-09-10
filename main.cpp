@@ -24,8 +24,8 @@ void creator() {
 	else {
 		cout << "Файл не создан!" << endl;
 	}
-	test.close();
 	SetConsoleCP(866);
+	test.close();
 }
 
 void eraser(char filename[255]) {
